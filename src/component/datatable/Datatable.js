@@ -11,7 +11,7 @@ const Styles= theme=>({
         fontSize:14,
     },
     margin: {
-        margin: theme.spacing(1),
+        margin: "8px 8px 8px 76%",
     },
     input:{
         marginTop:"12px"
@@ -91,7 +91,8 @@ class ServerSideDataTable extends React.Component{
     renderHeader(){
         const {classes}=this.props;
         return (
-            <div>
+            <div style={{width:"100%"}}>
+                <span>Data dari berbagai negara</span>
                 <IconButton size="medium" className={classes.margin} aria-label="Refresh" onClick={()=>this.initialize()} >
                     <Refresh/>
                 </IconButton>
@@ -119,9 +120,9 @@ class ServerSideDataTable extends React.Component{
                     expandOnRowClicked
                     subHeader
                     subHeaderComponent={
-                        <div>
+                        <>
                             {this.renderHeader()}
-                        </div>
+                        </>
                     }
                 />
     }

@@ -14,12 +14,11 @@ const styles = theme => ({
     },
     paper2: {
         width: "75%",
-        marginTop: "50px",
+        marginTop: "100px",
         marginBottom: "200px",
         marginLeft: "auto",
         marginRight: "auto",
-        height: "auto",
-        backgroundColor: "#4caf50",
+        height: "auto"
     },
     box1: {
         width: "80%",
@@ -33,30 +32,35 @@ const styles = theme => ({
         paddingTop: "40px",
         textAlign: "center",
         fontSize: "40px"
+    },
+    copyright: {
+        color: "#fff",
+        textAlign: "center"
     }
 });
 
 const COLUMNS = [
     {
         name: "No",
+        width: "10%",
         selector: "no_urt",
     },
     {
         name: "Negara",
-        selector: "name",
+        selector: "countryRegion",
     },
-    // {
-    //     name: "Positif",
-    //     selector: "confirmed",
-    // },
-    // {
-    //     name: "Sembuh",
-    //     selector: "recovered",
-    // },
-    // {
-    //     name: "Meninggal",
-    //     selector: "deaths",
-    // },
+    {
+        name: "Positif",
+        selector: "confirmed",
+    },
+    {
+        name: "Sembuh",
+        selector: "recovered",
+    },
+    {
+        name: "Meninggal",
+        selector: "deaths",
+    },
 ]
 
 class MainApp extends Component {
@@ -66,7 +70,8 @@ class MainApp extends Component {
         return (
             <div>
                 <Paper className={classes.paper}>
-                    <h1 className={classes.textStyle}>LAPORAN COVID-19</h1>
+                    <h1 className={classes.textStyle}>PANTAU COVID-19</h1>
+                    <p className={classes.copyright}>© 2020. Dikembangkan oleh <a href="https://github.com/muhfaishali" style={{ color: "#fff" }} target="_blank">Faishal</a> & Data API dikembangkan oleh <a href="https://github.com/mathdroid/covid-19-api" style={{color: "#fff"}} target="_blank">mathdroid</a></p>
                 </Paper>
                 
                 <div style={{marginTop: "100px"}}>
@@ -83,6 +88,17 @@ class MainApp extends Component {
                         </Grid>
                     </Grid>
                 </div>
+
+                <Paper className={classes.paper2}>
+                    <Datatable 
+                        title="List Negara"
+                        uriPage="confirmed/"
+                        columns={COLUMNS}
+                        convertData={(row)=>{
+                            return row;
+                        }}  
+                    />
+                </Paper>
             </div>
         )
     }

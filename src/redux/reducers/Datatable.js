@@ -54,7 +54,7 @@ export default (state = INIT_STATE, action) => {
         case PAGE_CHANGE_SUCCESS: {
             const { data, uri } = action.payload;
             const { convertData } = state;
-            const dataTable = convertToDataTable(data.countries, convertData[uri]);
+            const dataTable = convertToDataTable(data, convertData[uri]);
             state.data[uri] = dataTable;
             return {
                 ...state,
