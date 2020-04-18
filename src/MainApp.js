@@ -8,7 +8,7 @@ import { FaGrinBeam, FaFrownOpen, FaSadCry } from 'react-icons/fa';
 
 const styles = theme => ({
     paper: {
-        width: "75%",
+        width: "65%",
         height: "150px",
         backgroundColor: "#4caf50",
         margin: "auto",
@@ -16,7 +16,7 @@ const styles = theme => ({
     paper2: {
         width: "75%",
         marginTop: "100px",
-        marginBottom: "200px",
+        marginBottom: "70px",
         marginLeft: "auto",
         marginRight: "auto",
         height: "auto"
@@ -31,8 +31,8 @@ const styles = theme => ({
     textStyle: {
         color: "#fff",
         textAlign: "center",
-        fontSize: "40px",
-        paddingTop: "15px"
+        fontSize: "30px",
+        paddingTop: "50px"
     },
     textStyle2: {
         color: "#fff",
@@ -75,8 +75,7 @@ class MainApp extends Component {
         return (
             <div>
                 <Paper className={classes.paper}>
-                    <h4 className={classes.textStyle}>PANTAU COVID-19</h4>
-                    <p className={classes.copyright}>© 2020. Dikembangkan oleh <a href="https://github.com/muhfaishali" style={{ color: "#000" }} target="_blank">Faishal</a> & Data API dikembangkan oleh <a href="https://github.com/mathdroid/covid-19-api" style={{color: "#000"}} target="_blank">mathdroid</a></p>
+                    <h1 className={classes.textStyle}>PANTAU COVID-19</h1>
                 </Paper>
                 
                 <div style={{marginTop: "100px"}}>
@@ -135,6 +134,10 @@ class MainApp extends Component {
                         }}  
                     />
                 </Paper>
+
+                <div>
+                    <p className={classes.copyright}>© 2020. Dikembangkan oleh <a href="https://github.com/muhfaishali" style={{ color: "#000" }} target="_blank">Faishal</a> & Data API dikembangkan oleh <a href="https://github.com/mathdroid/covid-19-api" style={{color: "#000"}} target="_blank">mathdroid</a></p>
+                </div>
             </div>
         )
     }
