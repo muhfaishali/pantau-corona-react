@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Paper, Grid } from '@material-ui/core';
 import Datatable from '../src/component/datatable/Datatable';
 import SelectCountry from '../src/component/select/Select';
+import { FaGrinBeam, FaFrownOpen, FaSadCry } from 'react-icons/fa';
 
 const styles = theme => ({
     paper: {
@@ -29,12 +30,16 @@ const styles = theme => ({
     },
     textStyle: {
         color: "#fff",
-        paddingTop: "40px",
         textAlign: "center",
-        fontSize: "40px"
+        fontSize: "40px",
+        paddingTop: "15px"
+    },
+    textStyle2: {
+        color: "#fff",
+        textAlign: "center"
     },
     copyright: {
-        color: "#fff",
+        color: "#000",
         textAlign: "center"
     }
 });
@@ -70,21 +75,51 @@ class MainApp extends Component {
         return (
             <div>
                 <Paper className={classes.paper}>
-                    <h1 className={classes.textStyle}>PANTAU COVID-19</h1>
-                    <p className={classes.copyright}>© 2020. Dikembangkan oleh <a href="https://github.com/muhfaishali" style={{ color: "#fff" }} target="_blank">Faishal</a> & Data API dikembangkan oleh <a href="https://github.com/mathdroid/covid-19-api" style={{color: "#fff"}} target="_blank">mathdroid</a></p>
+                    <h4 className={classes.textStyle}>PANTAU COVID-19</h4>
+                    <p className={classes.copyright}>© 2020. Dikembangkan oleh <a href="https://github.com/muhfaishali" style={{ color: "#000" }} target="_blank">Faishal</a> & Data API dikembangkan oleh <a href="https://github.com/mathdroid/covid-19-api" style={{color: "#000"}} target="_blank">mathdroid</a></p>
                 </Paper>
                 
                 <div style={{marginTop: "100px"}}>
                     <SelectCountry />
                     <Grid container>
-                        <Grid item xs={6} sm={4}>
-                            <Paper className={classes.box1}>1</Paper>
+                        <Grid item xs={12} sm={4}>
+                            <Paper className={classes.box1}>
+                                <h2 className={classes.textStyle2}>SEMBUH</h2>
+                                <Grid container>
+                                    <Grid item xs={6} sm={5}>
+                                        <FaGrinBeam size={120} style={{ marginLeft: "15px", color: "#fff" }} />
+                                    </Grid>
+                                    <Grid item xs={6} sm={6}>
+                                        <h1 style={{ color: "#fff", fontSize: "43px", marginTop: "15px" }}>150</h1>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
                         </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <Paper className={classes.box1}>1</Paper>
+                        <Grid item xs={12} sm={4}>
+                            <Paper className={classes.box1}>
+                                <h2 className={classes.textStyle2}>POSITIF</h2>
+                                <Grid container>
+                                    <Grid item xs={6} sm={5}>
+                                        <FaFrownOpen size={120} style={{ marginLeft: "15px", color: "#fff" }} />
+                                    </Grid>
+                                    <Grid item xs={6} sm={6}>
+                                        <h1 style={{ color: "#fff", fontSize: "43px", marginTop: "15px" }}>150</h1>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
                         </Grid>
-                        <Grid item xs={6} sm={4}>
-                            <Paper className={classes.box1}>1</Paper>
+                        <Grid item xs={12} sm={4}>
+                            <Paper className={classes.box1}>
+                                <h2 className={classes.textStyle2}>MENINGGAL</h2>
+                                <Grid container>
+                                    <Grid item xs={6} sm={5}>
+                                        <FaSadCry size={120} style={{ marginLeft: "15px", color: "#fff" }} />
+                                    </Grid>
+                                    <Grid item xs={6} sm={6}>
+                                        <h1 style={{ color: "#fff", fontSize: "43px", marginTop: "15px" }}>150</h1>
+                                    </Grid>
+                                </Grid>
+                            </Paper>
                         </Grid>
                     </Grid>
                 </div>
@@ -93,6 +128,7 @@ class MainApp extends Component {
                     <Datatable 
                         title="List Negara"
                         uriPage="confirmed/"
+                        dataPerpage={20}
                         columns={COLUMNS}
                         convertData={(row)=>{
                             return row;

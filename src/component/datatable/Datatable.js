@@ -2,9 +2,9 @@ import React from "react";
 import DataTable from 'react-data-table-component';
 import {connect} from 'react-redux';
 import {withStyles} from '@material-ui/core/styles';
-import {InputBase, IconButton, TextField} from '@material-ui/core';
+import {IconButton} from '@material-ui/core';
 import { pageChange, initTable} from '../../redux/actions';
-import {Search, Refresh, Style, Close} from '@material-ui/icons'
+import {Refresh} from '@material-ui/icons'
 
 const Styles= theme=>({
     header:{
@@ -101,12 +101,14 @@ class ServerSideDataTable extends React.Component{
     }
 
     render(){
-        const {title, columns, data, miniLoader, onRowClicked, uriPage, basePage, expandComponent, expandRows}=this.props;
+        const {title, columns, data, miniLoader, onRowClicked, uriPage, basePage, expandComponent, expandRows, dataPerpage}=this.props;
         const base=basePage || 'api/';
         const uri = `${base}${uriPage}`;
         return <DataTable
                     noHeader={true}
                     title={title}
+                    pagination={true}
+                    paginationPerPage={dataPerpage}
                     columns={columns}
                     data={data[uri] || []}
                     progressPending={miniLoader}
@@ -119,6 +121,7 @@ class ServerSideDataTable extends React.Component{
                     expandableRowsComponent={expandComponent}
                     expandOnRowClicked
                     subHeader
+                    fixedHeader={true}
                     subHeaderComponent={
                         <>
                             {this.renderHeader()}
