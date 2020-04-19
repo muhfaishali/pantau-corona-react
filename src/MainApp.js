@@ -40,7 +40,7 @@ const styles = theme => ({
 const COLUMNS = [
     {
         name: "No",
-        width: "10%",
+        width: "15%",
         selector: "no_urt",
     },
     {
