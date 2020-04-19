@@ -118,11 +118,13 @@ class SelectCountry extends React.Component{
     }
 
     render() {
-        const {classes} = this.props;
+        const {classes, perCountry} = this.props;
+        const lu = perCountry && perCountry.lastUpdate;
         return (
             <div>
                 <p className={classes.textStyle}>Pilih Negara : </p>
                 {this.renderSelect()}
+                <p style={{ textAlign: "center" }}>last update : {lu}</p>
                 {this.boxRender()}
             </div>
         )
