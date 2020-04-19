@@ -6,6 +6,7 @@ import Select from 'react-select';
 import {countries} from './countries';
 import {getPercountry} from '../../redux/actions';
 import { FaGrinBeam, FaFrownOpen, FaSadCry } from 'react-icons/fa';
+import moment from 'moment';
 
 const Styles = theme=>({
     selectCountry: {
@@ -124,7 +125,7 @@ class SelectCountry extends React.Component{
             <div>
                 <p className={classes.textStyle}>Pilih Negara : </p>
                 {this.renderSelect()}
-                <p style={{ textAlign: "center" }}>last update : {lu}</p>
+                <p style={{ textAlign: "center" }}>terakhir update : {moment(lu).format('DD/MMMM/YYYY hh:mm')}</p>
                 {this.boxRender()}
             </div>
         )
