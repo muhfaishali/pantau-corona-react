@@ -21,3 +21,7 @@ export const HIDE_MINI_LOADER = 'hide_mini_loader'
 export const SET_LOADING_MESSAGE = 'set_loading_message'
 export const INIT_URL = 'init_url'
 export const HEART_BEAT_REQUEST = 'heart_beat_request';
+
+// Detail Per Countries
+export const GET_PERCOUNTRIES = 'get_percountries';
+export const GET_PERCOUNTRIES_SUCCESS = 'get_percountries_success';
