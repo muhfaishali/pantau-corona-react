@@ -10,7 +10,7 @@ This for to see corona patients in other countries
 4. run using command `npm start`
 5. Happy Hacking!
 
-This repository using React-Js with redux-saga.
+This project using React-Js with redux-saga.
 
 Big thank's to [mathdroid](https://github.com/mathdroid/covid-19-api) for covid-19 API
 
