@@ -72,7 +72,6 @@ class SelectCountry extends React.Component{
         const recovered = perCountry.confirmed && perCountry.recovered.value;
         const confirmed = perCountry.confirmed && perCountry.confirmed.value;
         const deaths = perCountry.confirmed && perCountry.deaths.value;
-        
         return (
             <Grid container>
                 <Grid item xs={12} sm={4}>
