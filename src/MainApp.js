@@ -46,7 +46,7 @@ const COLUMNS = [
         selector: "no_urt",
     },
     {
-        name: "Kota, Negara",
+        name: "Negara Bagian Provinsi",
         selector: "combinedKey",
     },
     {
