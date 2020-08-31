@@ -46,8 +46,8 @@ const COLUMNS = [
         selector: "no_urt",
     },
     {
-        name: "Negara",
-        selector: "countryRegion",
+        name: "Kota, Negara",
+        selector: "combinedKey",
     },
     {
         name: "Positif",
